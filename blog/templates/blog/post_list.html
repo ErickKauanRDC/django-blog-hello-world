@@ -1,0 +1,21 @@
+{% extends "blog/base.html" %} 
+{% block title %} 
+Posts do blog
+{% endblock %}
+
+{% block content %}
+    <div class="posts">
+        {% for post in post_list %}
+            <div class="post-card">
+                <a href="{{post.getPostUrl}}"><h3>{{post.title}}</h3></a>
+                <h5>Por: {{post.author}}</h5>
+                <p>
+                    {{post.body|linebreaks|truncatewords:10}}
+                </p>
+                <div class="data">
+                    <span >Ultima alteração : {{post.updated}}</span>
+                </div>
+            </div> 
+        {% endfor %}
+    </div>
+{% endblock %}

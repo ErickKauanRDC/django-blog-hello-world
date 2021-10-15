@@ -1,0 +1,14 @@
+{% extends "blog/base.html" %}
+
+{% block title %}{{post.title}}{% endblock %}
+
+{% block content %}
+    <div class="detail-post">
+            <h2>{{post.title}}</h2>
+            <h4>Por: {{post.author}}</h4>
+            <p>{{post.body}}</p>
+        <div class="data" >
+            <span >Ultima alteração: {{post.updated}}</span>
+        </div>
+    </div>
+{% endblock %}
